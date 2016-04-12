@@ -27,7 +27,7 @@ namespace XMLProgram
             */
 
             // Open the file to be read
-            XmlTextReader reader = new XmlTextReader("information.xml");
+            XmlTextReader reader = new XmlTextReader("outputExample.xml");
 
             // Clear output label
             outputLabel.Text = "";
@@ -71,6 +71,18 @@ namespace XMLProgram
             writer.WriteElementString("address", "1313 Mockingbird Lane");
             writer.WriteElementString("phone", "555-1313");
             writer.WriteElementString("sex", "Female");
+
+            // end the "student" element
+            writer.WriteEndElement();
+
+            //Start "student" element
+            writer.WriteStartElement("student");
+
+            //Write sub-elements
+            writer.WriteElementString("name", "Sherlock");
+            writer.WriteElementString("address", "221B Baker Street");
+            writer.WriteElementString("phone", "221-2212");
+            writer.WriteElementString("sex", "Male");
 
             // end the "student" element
             writer.WriteEndElement();
